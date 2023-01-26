@@ -1,0 +1,30 @@
+<% layout('layouts/boilerplate') -%>
+<div class="container">
+    <h1 class="mb-3">All Projects</h1>
+<ul>
+<% for(let project of projects){%>
+  <div class="card mb-3">
+    <div class="row g-0">
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title"><%=project.title%></h5>
+          <p class="card-text"><%=project.description%></p>
+          <p class="card-text">
+            <small class="text-muted">Manager <a href="#"><%= project.manager %></a></small>
+          </p>
+          <p class="card-text">
+            <small class="text-muted">Developer <a href="#"><%= project.developer%></a></small>
+          </p>
+          <p class="card-text fw-semibold">Project Status <%=project.status%></p>
+          <a class="btn btn-primary" href="/projects/<%=project._id%>" role="button">View <%=project.title%></a>
+        </div>
+      </div>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted"><b>Start</b> <%=project.start%></small>
+      <small class="text-muted"><b>Deadline</b> <%=project.deadline%></small>
+    </div>
+  </div>
+<%}%>
+</ul>
+</div>

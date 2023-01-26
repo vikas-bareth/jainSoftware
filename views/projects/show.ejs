@@ -1,0 +1,33 @@
+<% layout('layouts/boilerplate') -%>
+
+
+<div class="col">
+    <div class="col-md-6 offset-3">
+        <div class="card mb-3">
+            <div class="card-body">
+            <h5 class="card-title"><%=project.title%></h5>
+            <p class="card-text"><%=project.description%></p>
+            </div>
+            <ul class="list-group list-group-flush">
+            <li class="list-group-item text-muted"><b>Start:</b> <%=project.start%></li>
+            <li class="list-group-item text-muted"><b>Manager:</b> <%=project.manager%></li>
+            <li class="list-group-item text-muted"><b>Developer:</b> <%=project.developer%></li>
+            <li class="list-group-item text-muted"><b>Project Status:</b> <%=project.status%></li>
+            <li class="list-group-item text-muted"><b>Deadline:</b> <%=project.deadline%></li>
+            
+            </ul>
+                <div class="card-body">
+                <a class="card-link btn btn-info" href="/projects/<%= project.id%>/edit">Edit</a>
+                <form class="d-inline" action="/projects/<%=project.id%>?_method=DELETE" method="POST">
+                <button class="card-link btn btn-danger">Delete</button>
+                </form>
+
+             </div>
+
+                <div class="card-footer text-muted">
+                    <h1><%=project.users.username%>hello</h1>
+                2 days ago
+                </div>    
+        </div>
+    </div>
+</div>

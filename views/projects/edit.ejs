@@ -1,0 +1,68 @@
+<% layout('layouts/boilerplate') -%>
+    <div class="row">
+        <h1 class="text-center mb-3">Edit Project</h1>
+        <div class="col-6 offset-3">
+        <form class="mb-3 needs-validation" action="/projects/<%=project._id%>?_method=PUT" method="POST" novalidate>
+
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="title" placeholder="enter title" name="project[title]" value="<%=project.title%>" required>
+                <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                <label for="title">Title</label>
+            </div>
+            <div class="form-floating mb-3">
+                <textarea class="form-control" placeholder="Leave a comment here" id="description" style="height: 100px" name="project[description]" required><%= project.description%></textarea>
+                <div class="valid-feedback">
+                     Looks good!
+                </div>
+
+                <label for="description">Description</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="date" class="form-control" id="start" placeholder="start-date" name="project[start]" value="<%=project.start%>" required>
+                <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                <label for="start">Start</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="date" class="form-control" id="deadline" placeholder="deadline-date" name="project[deadline]" value="<%=project.deadline%>" required>
+                <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                <label for="deadline">Deadline</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="status" placeholder="status" name="project[status]" value="<%=project.status%>" required>
+                <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                <label for="status">status</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="manager" placeholder="manager" name="project[manager]" value="<%=project.manager%>" required>
+                <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                <label for="manager">manager</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="developer" placeholder="developer" name="project[developer]" value="<%=project.developer%>" required>
+                <div class="valid-feedback">
+                    Looks good!
+                  </div>
+                <label for="developer">developer</label>
+            </div>
+
+            <div class="mb-3">
+
+                <button class="btn btn-info mb-3">Update project</button>
+            </div>
+        </form>
+        <a href="/projects">All Projects</a>
+    </div>
+
+</div>
+
+
